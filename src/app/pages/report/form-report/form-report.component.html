@@ -1,0 +1,66 @@
+<mat-label mat-dialog-title>{{titleForm}}</mat-label>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+    <mat-stepper orientation="vertical">
+      <mat-step>
+        <ng-template matStepLabel>Informacion del empleado</ng-template>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Nombre del empleado</mat-label>
+            <input matInput formControlName="name" placeholder="Nombre del empleado">
+            <mat-icon matSuffix>people</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Cargo</mat-label>
+            <input matInput placeholder="Cargo" formControlName="position">
+            <mat-icon matSuffix>work</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Area de trabajo</mat-label>
+            <mat-icon matSuffix>not_listed_location</mat-icon>
+            <mat-select formControlName="workArea">
+              <mat-option value="1">Operaciones</mat-option>
+              <mat-option value="2">Recursos Humanos</mat-option>
+              <mat-option value="3">Servicio al cliente</mat-option>
+              <mat-option value="4">Gerencia</mat-option>
+              <mat-option value="5">Desarrollo</mat-option>
+              <mat-option value="6">TIC</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Correo electronico</mat-label>
+            <input matInput placeholder="Correo electronico" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </p>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Informacion del activo</ng-template>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Articulo</mat-label>
+            <input matInput placeholder="Articulo" formControlName="item">
+            <mat-icon matSuffix>emoji_objects</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Cantidad</mat-label>
+            <input matInput placeholder="Cantidad" formControlName="amount">
+            <mat-icon matSuffix>pin</mat-icon>
+          </mat-form-field>
+        </p>
+      </mat-step>
+    </mat-stepper>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onSave()">Asignar</button>
+</mat-dialog-actions>

@@ -1,0 +1,13 @@
+<mat-toolbar class="" color="primary">
+  <span>SGI</span>
+  <a mat-button>Inicio</a>
+  <a mat-button routerLink="/sgi/report">Reporte</a>
+  <button mat-button [matMenuTriggerFor]="belowMenu">
+    <mat-icon>face</mat-icon>
+  </button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item routerLink="/sgi/authentication/login">Iniciar secion</button>
+    <button mat-menu-item routerLink="/sgi/authentication/register">Registrarse</button>
+  </mat-menu>
+
+</mat-toolbar>
